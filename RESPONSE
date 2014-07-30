@@ -1,0 +1,47 @@
+ctdl +
+ser +
+carrier +
+console +
+term +
+format +
+group +
+input +
+library +
+misc +
+modem +
+msg +
+output +
+port +
+room +
+strftime +
+timedate +
+(version) +
+window +
+(account) +
+(aplic cron) +
+(chat dumbterm) +
+(config msgcfg) +
+do +
+(doaide dosysop logedit halledit roomedit grpedit msgmod) +
+(down) +
+(edit) +
+(files) +
+hall +
+help +
+(info infofile) +
+(init) +
+log +
+log2 +
+(login loginnew) +
+(logout) +
+(misc2) +
+mcfile +
+msgmake +
+msgread +
+(net netdc15 netmail netmsg netnode netroute) +
+room2 +
+trap +
+(xmodem lzhfile zipfile)
+ctdl
+ctdl
+spawnl;

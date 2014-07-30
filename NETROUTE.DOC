@@ -1,0 +1,72 @@
+ Atlas Autorouter (NETROUTE.EXE) v1.02b
+ A Citadel Mail Router
+ By Angela Davis -- (206) 525-3683
+ 
+ NETROUTE analyzes the paths in your MSG.DAT file and adjusts the ROUTE.CIT
+file based on this path information.  It takes about seven minutes to run,
+and functions well as a weekly CRON event.  NETROUTE will automatically
+identify new nodes, and adjust to changing situations.  It will also
+generate a unique #ALIAS for every node it sees.
+ 
+ 
+ WHAT NETROUTE DOES AND HOW TO USE IT
+ 
+ NETROUTE lets you keep your existing ROUTE.CIT format, while modifying it
+based on how the messages on your board actually reach you.  It doesn't
+disturb any of your ROUTE.CIT's comments and formatting unless it needs to
+change the content of a route line.  New BBS's which it finds are appended
+to the end of the ROUTE.CIT file.  New aliases are added before the routes.
+ 
+ NETROUTE must be run in the same directory as the MSG.DAT and ROUTE.CIT
+files.  If these files reside in different directories, NETROUTE can be
+included in a batch file which copies ROUTE.CIT to the message directory,
+runs NETROUTE, and copies the new ROUTE.CIT back where it belongs.
+ 
+ 
+ COMMAND LINE SWITCHES
+ 
+ /F turns on Full Mode.  Normally, NETROUTE dynamically adjusts its work to
+take five minutes or less scanning the message file.  On a slower machine,
+this may cause a few paths to be skipped.  You can avoid this--and force a
+scan of the entire message file--using /F.  Example:
+ 
+    NETROUTE /F
+ 
+ 
+ /V turns on Verbose Mode.  This will tell you some trivia bits about what
+NETROUTE is finding and doing.  Currently, this doesn't do much.  Example:
+ 
+    NETROUTE /V
+ 
+ 
+ ROUTE.CIT OPTIONS: LOCKING AND AVOIDING
+ 
+ If you do not want NETROUTE to change a particular #ROUTE line, add the
+word "LOCKED" to the end of the line, like this:
+ 
+    #ROUTE "Tammy's Target BBS"     "Randy's Route"    LOCKED
+ 
+ 
+ If you would prefer that your mail NOT pass through a particular BBS, you
+can tell NETROUTE to avoid that BBS as much as possible.  To do so, add a
+line like this to your ROUTE.CIT file:
+ 
+    #AVOID "Sara's System"
+ 
+ Good reasons for using this command include (1) when mail often
+"disappears" when sent through the node, or (2) when the sysop of the node
+does not respect the privacy of users' mail.  Only use #AVOID as a LAST
+RESORT, because every use of it DEGRADES the effectiveness of your routes.
+Also note that this command cannot avoid a node entirely.  It just favors
+alternate routes if they exist.
+ 
+ 
+ NOTES ON USING NETROUTE:
+ 
+ * NETROUTE (and the whole network) works best when you share rooms with as
+many nodes as possible.  This doesn't mean you should share every room with
+every BBS your BBS calls.  But if you share "Jane's Room" with one node, and
+if another node that you call has the same "Jane's Room", you should share
+the room with both nodes.  This increases the speed and safety of the
+network.  It also allows NETROUTE to choose the quickest and most dependable
+routes.
